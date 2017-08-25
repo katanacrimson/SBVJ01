@@ -1,0 +1,5405 @@
+{
+	"movementController": {
+		"movingDirection": "left",
+		"rotation": 0,
+		"crouching": false,
+		"facingDirection": "left",
+		"velocity": [
+			-0.23150478303432465,
+			-1.2709988355636597
+		],
+		"position": [
+			1044.9461669921875,
+			1026.5
+		]
+	},
+	"uuid": "7bb55a32b4a5fb530273d4b954f39d20",
+	"modeType": "casual",
+	"description": "This guy seems to have nothing to say for himself.",
+	"statusController": {
+		"resourceValues": {
+			"shieldStaminaRegenBlock": 0,
+			"breath": 100,
+			"energyRegenBlock": 0,
+			"health": 100,
+			"perfectBlockLimit": 1,
+			"damageAbsorption": 0,
+			"food": 70,
+			"energy": 100,
+			"shieldStamina": 1,
+			"perfectBlock": 0
+		},
+		"statusProperties": {
+			"damageFlashOffDirectives": "multiply=ffffff00=0.85",
+			"hitInvulnerabilityFlash": 0.15,
+			"hitInvulnerabilityTime": 1,
+			"shieldHitInvulnerabilityTime": 1,
+			"mouthPosition": [
+				0,
+				0.75
+			],
+			"ouchNoise": "/sfx/humanoid/humanhurt_female1.ogg",
+			"hitInvulnerabilityThreshold": 0.1,
+			"breathHealthPenaltyPercentageRate": 0.05,
+			"damageFlashOnDirectives": "",
+			"targetMaterialKind": "organic"
+		},
+		"resourcesLocked": {
+			"shieldStaminaRegenBlock": false,
+			"breath": false,
+			"energyRegenBlock": false,
+			"health": false,
+			"perfectBlockLimit": false,
+			"damageAbsorption": false,
+			"food": false,
+			"energy": false,
+			"shieldStamina": false,
+			"perfectBlock": false
+		},
+		"persistentEffectCategories": {},
+		"ephemeralEffects": []
+	},
+	"deployment": {
+		"scriptStorage": {}
+	},
+	"inventory": {
+		"headSlot": null,
+		"customBar": [
+			[
+				[
+					{
+						"location": 0,
+						"type": "mainBag"
+					},
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				]
+			],
+			[
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				],
+				[
+					null,
+					null
+				]
+			]
+		],
+		"customBarGroup": 0,
+		"selectedActionBar": null,
+		"currencies": {
+			"money": 50,
+			"essence": 0
+		},
+		"chestCosmeticSlot": {
+			"id": "Item",
+			"version": 8,
+			"content": {
+				"parameters": {
+					"colorIndex": 103277182
+				},
+				"name": "workoutchest",
+				"count": 1
+			}
+		},
+		"chestSlot": null,
+		"backCosmeticSlot": null,
+		"inspectionTool": {
+			"id": "Item",
+			"version": 8,
+			"content": {
+				"parameters": {},
+				"name": "inspectionmode",
+				"count": 1
+			}
+		},
+		"backSlot": null,
+		"trashSlot": null,
+		"legsCosmeticSlot": {
+			"id": "Item",
+			"version": 8,
+			"content": {
+				"parameters": {
+					"colorIndex": 354076405
+				},
+				"name": "jeans1legs",
+				"count": 1
+			}
+		},
+		"legsSlot": null,
+		"itemBags": {
+			"materialBag": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			"objectBag": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			"foodBag": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			"reagentBag": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			"mainBag": [
+				{
+					"id": "Item",
+					"version": 8,
+					"content": {
+						"parameters": {
+							"primaryAbilityType": "broadswordcombo",
+							"altAbilityType": "spinslash"
+						},
+						"name": "brokenprotectoratebroadsword",
+						"count": 1
+					}
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			]
+		},
+		"paintTool": null,
+		"beamAxe": {
+			"id": "Item",
+			"version": 8,
+			"content": {
+				"parameters": {},
+				"name": "beamaxe",
+				"count": 1
+			}
+		},
+		"swapSlot": null,
+		"wireTool": null,
+		"headCosmeticSlot": null
+	},
+	"techs": {
+		"availableTechs": [],
+		"equippedTechs": {},
+		"enabledTechs": []
+	},
+	"techController": {
+		"techModules": []
+	},
+	"quests": {
+		"quests": {
+			"protectorate": {
+				"id": "Quest",
+				"version": 3,
+				"content": {
+					"money": 50,
+					"portraits": {
+						"QuestComplete": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/backarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/bsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalehead.png:normal?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/emote.png:idle.1?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/hair/fem52.png:normal?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalebody.png:idle.2?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/decorative/clothes/jeans1/pants.png:idle.2??replace;6f2919=151515;ffca8a=838383;e0975c=555555;a85636=383838",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/chestf.png:idle.2??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/frontarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/fsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						],
+						"QuestStarted": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/backarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/bsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalehead.png:normal?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/emote.png:idle.1?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/hair/fem52.png:normal?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalebody.png:idle.2?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/decorative/clothes/jeans1/pants.png:idle.2??replace;6f2919=151515;ffca8a=838383;e0975c=555555;a85636=383838",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/chestf.png:idle.2??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/frontarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/fsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						],
+						"QuestFailed": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/backarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/bsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalehead.png:normal?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/emote.png:idle.1?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/hair/fem52.png:normal?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									-1,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/femalebody.png:idle.2?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/decorative/clothes/jeans1/pants.png:idle.2??replace;6f2919=151515;ffca8a=838383;e0975c=555555;a85636=383838",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/chestf.png:idle.2??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/humanoid/human/frontarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							},
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/items/armors/human/human-workout/fsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+								"transformation": [
+									[
+										1,
+										0,
+										-21.5
+									],
+									[
+										0,
+										1,
+										-21.5
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						]
+					},
+					"showDialog": false,
+					"lastUpdatedOn": 1307483470,
+					"state": "Complete",
+					"portraitTitles": {
+						"QuestComplete": "Misty",
+						"QuestStarted": "Misty",
+						"QuestFailed": "Misty"
+					},
+					"arcPos": 0,
+					"worldId": null,
+					"text": "Survive graduation day.",
+					"title": "The Protectorate",
+					"serverUuid": null,
+					"completionText": "The years of training paid off - you survived graduation day!",
+					"arc": {
+						"id": "QuestArcDescriptor",
+						"version": 1,
+						"content": {
+							"quests": [
+								{
+									"id": "QuestDescriptor",
+									"version": 3,
+									"content": {
+										"parameters": {},
+										"templateId": "protectorate",
+										"seed": 6958632436374961000,
+										"questId": "protectorate"
+									}
+								}
+							],
+							"stagehandUniqueId": null
+						}
+					},
+					"scriptStorage": {},
+					"unread": true,
+					"rewards": [],
+					"indicators": [],
+					"parameters": {
+						"uniformLocker": {
+							"portrait": null,
+							"indicator": null,
+							"type": "item",
+							"name": null,
+							"item": {
+								"id": "Item",
+								"version": 8,
+								"content": {
+									"parameters": {},
+									"name": "protectoratelobbylockers2",
+									"count": 1
+								}
+							}
+						},
+						"weaponChest": {
+							"portrait": null,
+							"indicator": null,
+							"type": "item",
+							"name": null,
+							"item": {
+								"id": "Item",
+								"version": 8,
+								"content": {
+									"parameters": {},
+									"name": "weaponchest",
+									"count": 1
+								}
+							}
+						},
+						"sail": {
+							"portrait": [
+								{
+									"image": "/ai/portraits/humanquestportrait.png"
+								}
+							],
+							"indicator": null,
+							"type": "noDetail",
+							"name": "S.A.I.L"
+						},
+						"beamaxe": {
+							"portrait": null,
+							"indicator": null,
+							"type": "item",
+							"name": null,
+							"item": {
+								"id": "Item",
+								"version": 8,
+								"content": {
+									"parameters": {},
+									"name": "protectoratebeamaxe",
+									"count": 1
+								}
+							}
+						},
+						"player": {
+							"indicator": null,
+							"species": "human",
+							"name": "Misty",
+							"portrait": [
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/backarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/bsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/femalehead.png:normal?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/emote.png:idle.1?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/hair/fem52.png:normal?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/femalebody.png:idle.2?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/decorative/clothes/jeans1/pants.png:idle.2??replace;6f2919=151515;ffca8a=838383;e0975c=555555;a85636=383838",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/chestf.png:idle.2??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/frontarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/fsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								}
+							],
+							"type": "entity",
+							"uniqueId": "7bb55a32b4a5fb530273d4b954f39d20",
+							"gender": "female"
+						}
+					},
+					"failureText": "",
+					"canTurnIn": false
+				}
+			},
+			"bootship": {
+				"id": "Quest",
+				"version": 3,
+				"content": {
+					"money": 50,
+					"portraits": {
+						"QuestComplete": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/ai/portraits/humanquestportrait.png",
+								"transformation": [
+									[
+										1,
+										0,
+										-14
+									],
+									[
+										0,
+										1,
+										-20
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						],
+						"QuestStarted": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/ai/portraits/humanquestportrait.png",
+								"transformation": [
+									[
+										1,
+										0,
+										-14
+									],
+									[
+										0,
+										1,
+										-20
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						],
+						"QuestFailed": [
+							{
+								"color": [
+									255,
+									255,
+									255
+								],
+								"image": "/ai/portraits/humanquestportrait.png",
+								"transformation": [
+									[
+										1,
+										0,
+										-14
+									],
+									[
+										0,
+										1,
+										-20
+									],
+									[
+										0,
+										0,
+										1
+									]
+								],
+								"position": [
+									0,
+									0
+								],
+								"fullbright": false
+							}
+						]
+					},
+					"showDialog": false,
+					"lastUpdatedOn": 1307483471,
+					"state": "Active",
+					"portraitTitles": {
+						"QuestComplete": "S.A.I.L",
+						"QuestStarted": "S.A.I.L",
+						"QuestFailed": "S.A.I.L"
+					},
+					"arcPos": 0,
+					"worldId": null,
+					"text": "The ship is damaged and you are floating alone in space. Your best bet is to boot up the ship computer and see if anything good comes of it.",
+					"title": "Boot Up",
+					"serverUuid": null,
+					"completionText": "SAIL is awake! Now you have some guidance, and some company.",
+					"arc": {
+						"id": "QuestArcDescriptor",
+						"version": 1,
+						"content": {
+							"quests": [
+								{
+									"id": "QuestDescriptor",
+									"version": 3,
+									"content": {
+										"parameters": {},
+										"templateId": "bootship",
+										"seed": 148584606101442800,
+										"questId": "bootship"
+									}
+								}
+							],
+							"stagehandUniqueId": null
+						}
+					},
+					"scriptStorage": {
+						"complete": false
+					},
+					"unread": true,
+					"rewards": [],
+					"indicators": [],
+					"parameters": {
+						"sail": {
+							"portrait": [
+								{
+									"image": "/ai/portraits/humanquestportrait.png"
+								}
+							],
+							"indicator": null,
+							"type": "noDetail",
+							"name": "S.A.I.L"
+						},
+						"player": {
+							"indicator": null,
+							"species": "human",
+							"name": "Misty",
+							"portrait": [
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/backarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/bsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/femalehead.png:normal?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/emote.png:idle.1?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/hair/fem52.png:normal?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										-1,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/femalebody.png:idle.2?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/decorative/clothes/jeans1/pants.png:idle.2??replace;6f2919=151515;ffca8a=838383;e0975c=555555;a85636=383838",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/chestf.png:idle.2??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/humanoid/human/frontarm.png:idle.5?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								},
+								{
+									"color": [
+										255,
+										255,
+										255
+									],
+									"image": "/items/armors/human/human-workout/fsleeve.png:idle.5??replace;6f2919=59163f;ffca8a=eab3db;e0975c=d35eae;a85636=97276d",
+									"transformation": [
+										[
+											1,
+											0,
+											-21.5
+										],
+										[
+											0,
+											1,
+											-21.5
+										],
+										[
+											0,
+											0,
+											1
+										]
+									],
+									"position": [
+										0,
+										0
+									],
+									"fullbright": false
+								}
+							],
+							"type": "entity",
+							"uniqueId": "7bb55a32b4a5fb530273d4b954f39d20",
+							"gender": "female"
+						}
+					},
+					"failureText": "",
+					"canTurnIn": false
+				}
+			}
+		},
+		"currentQuest": null
+	},
+	"universeMap": {
+		"4ed4572266be24629076b59a06c92139": {
+			"systems": [
+				[
+					[
+						-123774250,
+						332164113,
+						-256071029
+					],
+					{
+						"mappedObjects": {},
+						"bookmarks": [],
+						"mappedPlanets": [
+							{
+								"location": [
+									-123774250,
+									332164113,
+									-256071029
+								],
+								"planet": 4,
+								"satellite": 0
+							}
+						]
+					}
+				]
+			],
+			"teleportBookmarks": []
+		}
+	},
+	"codexes": {
+		"protectorate1": true,
+		"protectorate2": true
+	},
+	"aiState": {
+		"availableMissions": [],
+		"completedMissions": []
+	},
+	"companions": {
+		"scriptStorage": {
+			"recruits": {
+				"beenOnShip": {}
+			},
+			"activePods": {},
+			"pods": {}
+		},
+		"companions": {
+			"crew": [],
+			"pets": [],
+			"followers": [],
+			"shipCrew": []
+		}
+	},
+	"blueprints": {
+		"knownBlueprints": [
+			{
+				"parameters": {},
+				"name": "copperceilinglight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6shead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfarm",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenbed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mhead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pethealingstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "secretdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedtomato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "corncob",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldenplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverscrew",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cottonwool",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "firedclay",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "orangedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cobblestonebrick",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "grapplinghook",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "feroziumwand",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cavedetector",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bulb",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodengate",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperbox1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "timer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greendye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumspear",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "simplecapeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coolchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fullwood2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "oredetector",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedpoultry",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "browndye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mpants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rockbrickmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "scanner",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallwallbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "violiumshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bottle",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "siliconboard",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flaghuman",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railhook",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "delay",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "volatilepowder",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "roastedcarrot",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mashedpotato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tshirtchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bottledwater",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greydye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanshipdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "violiumbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5achest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wateringcan",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "huntingspear",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bugnet",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperfence",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodpanelling",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fullwood1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "standingturret",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "dlatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenaxe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "molotov",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compositerailplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "treasurehoard",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5ahead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwindow2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boiledpearlpeas",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silk",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cake",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "glass",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "shortcapeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nanowrap",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "stationtram",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "meatdumplings",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudechest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "workoutchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "yellowstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "reddye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedviolium",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "aegisaltbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "crosshatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "burnspray",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durablefishingrod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bandage",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "canvas",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rustyrail",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "countdowntimer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5apants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedferozium",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweatervestchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "radiationprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railcraftingtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rooftiles",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "conceptchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "solariumstar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "campfire",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "salve",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "torch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingwheel",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cabinroofing",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bluedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "teddybearplush",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wicker",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "dyeremover",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "glassmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "string",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5shead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "minifridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rustyrailplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "composite01material",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushstudent",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweetpopcorn",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "brickmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "syringe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mannequin",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "platform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperwindow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedribmeat",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greenstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "drain",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperroofing",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bigredbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencookingtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boxingglove",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftinganvil",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bomb",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pettether",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "or",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "proximitysensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5schest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "inventorstable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwateringcan",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay3",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bluestim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mininglantern",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenchair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodendoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "secrettrapdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6spants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "yellowdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bonbons",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mediummetal",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wiringstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compoundbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfurnace",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flashlight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mhead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coppershelf",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "climbingrope",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "alarm",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwindow1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bread",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfurniture",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudepants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedaegisalt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "packeddirt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "relocator",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallbattery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushbeginner",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudehead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "asphalt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fence",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "darksmoothstonematerial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6schest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "blackdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "xor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "conceptlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "chain",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wire",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5spants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "scarecrow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coppersupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mininghathead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "aegisaltpistol",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coffee",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "syntheticmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "liquidsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "battery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedfish",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mothtrap",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "not",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6apants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "capturepod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperlantern",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallfloorbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1spotlight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "halogenpack",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanshiphatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay5",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "whitedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "breathprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railstop",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "purpledye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "workoutlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencrate1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pinkdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallwallswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "hoe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingmedical",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tinywallswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flashysweater",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compositerail",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodsupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "medkit",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanstoragelocker",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "thatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "3dprinter",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "popcorn",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedbacon",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wickersupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "paper",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumdagger",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railtramstop",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenhammer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bakedpotato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mpants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flare",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "darkwoodmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "persistentswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "lightsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "feroziumstaff",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fabric",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushmaster",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "heatprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6achest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6ahead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smoothmetal",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "and",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedalienmeat",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coldprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "heavypipe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pixelcompressor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "antidote",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fishingrod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencrate2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "startershield",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "redstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "capturestation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coollegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenverticaldoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boiledrice",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodbridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweatervestlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tinywallbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railbumper",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sprinkler",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "lanternstickback",
+				"count": 1
+			}
+		],
+		"newBlueprints": [
+			{
+				"parameters": {},
+				"name": "copperceilinglight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6shead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfarm",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenbed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mhead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pethealingstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "secretdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedtomato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "corncob",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldenplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverscrew",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cottonwool",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "firedclay",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "orangedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cobblestonebrick",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "grapplinghook",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "feroziumwand",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cavedetector",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bulb",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodengate",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperbox1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "timer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greendye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumspear",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "simplecapeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coolchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fullwood2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "oredetector",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedpoultry",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "browndye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5mpants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rockbrickmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "scanner",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallwallbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "violiumshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bottle",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "siliconboard",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flaghuman",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railhook",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "delay",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "volatilepowder",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "roastedcarrot",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mashedpotato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tshirtchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bottledwater",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greydye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanshipdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "violiumbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5achest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wateringcan",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "huntingspear",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bugnet",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperfence",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodpanelling",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fullwood1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "standingturret",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "dlatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenaxe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "molotov",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compositerailplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "treasurehoard",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5ahead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwindow2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boiledpearlpeas",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silk",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cake",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "glass",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "shortcapeback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nanowrap",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "stationtram",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "meatdumplings",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudechest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "workoutchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "yellowstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "reddye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedviolium",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "aegisaltbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "crosshatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "burnspray",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durablefishingrod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bandage",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "canvas",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rustyrail",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "countdowntimer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5apants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedferozium",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweatervestchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "radiationprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railcraftingtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rooftiles",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "conceptchest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "solariumstar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "campfire",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "salve",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "torch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingwheel",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cabinroofing",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bluedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "teddybearplush",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wicker",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "dyeremover",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "glassmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "string",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5shead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "minifridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "rustyrailplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "composite01material",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushstudent",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweetpopcorn",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "brickmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "syringe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mannequin",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "platform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperwindow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedribmeat",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "greenstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "drain",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperroofing",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bigredbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencookingtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironshortsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boxingglove",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftinganvil",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bomb",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pettether",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "or",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "proximitysensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5schest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "inventorstable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwateringcan",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay3",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bluestim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mininglantern",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenchair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodendoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "secrettrapdoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6spants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "yellowdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bonbons",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mediummetal",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wiringstation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compoundbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfurnace",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flashlight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mhead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coppershelf",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "climbingrope",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "alarm",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenwindow1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bread",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingfurniture",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudepants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinedaegisalt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "packeddirt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "relocator",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallbattery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushbeginner",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "nudehead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "asphalt",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fence",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "darksmoothstonematerial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier3pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6schest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "blackdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "xor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "conceptlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "chain",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wire",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier5spants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "scarecrow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coppersupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mininghathead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "aegisaltpistol",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coffee",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "syntheticmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "liquidsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "battery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "ironbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedfish",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperplatform",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "refinery",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "durasteelbroadsword",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "mothtrap",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "not",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6apants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "capturepod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "copperlantern",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1chest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallfloorbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1spotlight",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "halogenpack",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanshiphatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossildisplay5",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "whitedye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4door",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "breathprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railstop",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "purpledye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "workoutlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencrate1",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3bed",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pinkdye",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smallwallswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "goldbar",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "hoe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "craftingmedical",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tinywallswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flashysweater",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "compositerail",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodsupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier4light",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier1table",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "medkit",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humanstoragelocker",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "thatch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "3dprinter",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "popcorn",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodtable",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedbacon",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "wickersupport",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "paper",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier2head",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier1pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "titaniumdagger",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "silverblock",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railtramstop",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenhammer",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "bakedpotato",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6mpants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "flare",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "darkwoodmaterial",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "persistentswitch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "lightsensor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "feroziumstaff",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fabric",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fossilbrushmaster",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tungstenbow",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "heatprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6achest",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier3chair",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier6ahead",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "smoothmetal",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "and",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "cookedalienmeat",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coldprotectionback",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "heavypipe",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tier2switch",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "pixelcompressor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "antidote",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "fishingrod",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodencrate2",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "startershield",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "redstim",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "capturestation",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "coollegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "humantier4pants",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodenverticaldoor",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "boiledrice",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "woodbridge",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sweatervestlegs",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "tinywallbutton",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "railbumper",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "sprinkler",
+				"count": 1
+			},
+			{
+				"parameters": {},
+				"name": "lanternstickback",
+				"count": 1
+			}
+		]
+	},
+	"identity": {
+		"facialHairType": "",
+		"facialHairGroup": "",
+		"personalityArmOffset": [
+			0,
+			0
+		],
+		"hairType": "fem52",
+		"bodyDirectives": "?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+		"personalityArmIdle": "idle.5",
+		"gender": "female",
+		"personalityHeadOffset": [
+			-1,
+			0
+		],
+		"color": [
+			51,
+			117,
+			237
+		],
+		"hairGroup": "hair",
+		"facialMaskDirectives": "",
+		"species": "human",
+		"personalityIdle": "idle.2",
+		"facialMaskGroup": "",
+		"name": "Misty",
+		"facialHairDirectives": "",
+		"emoteDirectives": "?replace;c7815b=b37c5d;ffe2c5=fff7ec;ffc181=f9d3a9;d39c6c=d3a57c?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+		"hairDirectives": "?replace;735e3a=a9882f;a38d59=c7ac3f;d9c189=e6e756?replace;dc1f00=e6e6e6;951500=6f6f6f;be1b00=979797",
+		"facialMaskType": ""
+	},
+	"team": {
+		"type": "friendly",
+		"team": 0
+	},
+	"log": {
+		"deathCount": 0,
+		"collections": {},
+		"cinematics": [],
+		"playTime": 14.916667444631457,
+		"scannedObjects": [],
+		"introComplete": true,
+		"radioMessages": []
+	},
+	"shipUpgrades": {
+		"maxFuel": 1000,
+		"capabilities": [],
+		"shipLevel": 0,
+		"crewSize": 2,
+		"shipSpeed": 15,
+		"fuelEfficiency": 0
+	}
+}

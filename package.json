@@ -1,0 +1,33 @@
+{
+  "name": "SBVJ01",
+  "version": "1.0.0",
+  "description": "SBVJ01 - Starbound Versioned JSON library",
+  "main": "SBVJ01.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianb/SBVJ01.git"
+  },
+  "keywords": [
+    "starbound",
+    "SBVJ01"
+  ],
+  "author": "Damian Bushong <katana@odios.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damianb/SBVJ01/issues"
+  },
+  "homepage": "https://github.com/damianb/SBVJ01#readme",
+  "dependencies": {
+    "ConsumableBuffer": "github:damianb/ConsumableBuffer",
+    "ConsumableFile": "github:damianb/ConsumableFile",
+    "SBON": "github:damianb/SBON",
+    "fs-extra": "^4.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
