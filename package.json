@@ -4,7 +4,7 @@
   "description": "SBVJ01 - Starbound Versioned JSON library",
   "main": "SBVJ01.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
