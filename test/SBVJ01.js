@@ -39,7 +39,6 @@ describe('SBVJ01', () => {
 
 	describe('SBVJ01.save', () => {
 		afterEach(async () => {
-			return // TODO: REMOVE
 			let files = await fs.readdir(tmpDir + '/')
 			for(const file of files) {
 				if(file === '.gitkeep') {
