@@ -1,2 +1,4 @@
 node_modules/*
 .directory
+test/tmp/*
+!test/tmp/.gitkeep
