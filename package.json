@@ -1,6 +1,6 @@
 {
   "name": "SBVJ01",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "SBVJ01 - Starbound Versioned JSON library",
   "main": "SBVJ01.js",
   "scripts": {
