@@ -37,6 +37,22 @@ const readPlayer = async (player) => {
 readPlayer(player)
 ```
 
+## Properties
+
+### SBVJ01.version
+
+An integer (specifically within Int32 range) identifying the version of the entity.
+
+### SBVJ01.name
+
+A UTF-8 string providing the name of the entity.
+
+See also: /versioning/ directory within Starbound unpacked assets
+
+### SBVJ01.entity
+
+The data structure for the entity; should be compatible with SBON.writeDynamic, which should cover almost anything that can be expressed with JSON.
+
 ## Methods
 
 ### new SBVJ01(path)
@@ -51,7 +67,6 @@ See usage above.
 ### SBVJ01.load()
 
 Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
-This is a convenience method for the common workflow of loading the file.
 
 * @return {Promise:object} - An object containing the versioned JSON entity, the name of the entity, and the entity version.
 
@@ -62,4 +77,19 @@ async () => {
 	const { entity, name, version } = await player.load()
 	// you know have access to all the entity information. yay!
 }
+```
+
+### SBVJ01.save()
+
+Saves the current entity to disk, then reloads the currently loaded entity data.
+
+* @return {Promise:object} - An object containing the versioned JSON payload.
+
+``` js
+	const filepath = '/path/to/sbvj01/file.player'
+	const player = new SBVJ01(filepath)
+	let { entity, name, version } = await player.load()
+	player.entity.name = 'MyNewName'
+	{ entity, name, version } = await player.save()
+	// entity, name, version now contain the latest changes...as does the file.player file itself.
 ```

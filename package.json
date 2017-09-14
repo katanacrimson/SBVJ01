@@ -4,7 +4,7 @@
   "description": "SBVJ01 - Starbound Versioned JSON library",
   "main": "SBVJ01.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,13 @@
   "dependencies": {
     "ConsumableBuffer": "github:damianb/ConsumableBuffer",
     "ConsumableFile": "github:damianb/ConsumableFile",
+    "ExpandingBuffer": "github:damianb/ExpandingBuffer",
+    "ExpandingFile": "github:damianb/ExpandingFile",
     "SBON": "github:damianb/SBON",
-    "fs-extra": "^4.0.1"
+    "fs-extra": "^4.0.2"
   },
   "devDependencies": {
-    "chai": "^4.1.1",
-    "mocha": "^3.5.0"
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
   }
 }

@@ -3,8 +3,7 @@
 // ---
 // @copyright (c) 2017 Damian Bushong <katana@odios.us>
 // @license MIT license
-// @url <https://github.com/damianb/>
-// @reddit <https://reddit.com/u/katana__>
+// @url <https://github.com/damianb/SBVJ01>
 //
 /*jslint node: true, asi: true */
 'use strict'
@@ -12,6 +11,8 @@
 const fs = require('fs-extra')
 const ConsumableBuffer = require('ConsumableBuffer')
 const ConsumableFile = require('ConsumableFile')
+const ExpandingBuffer = require('ExpandingBuffer')
+const ExpandingFile = require('ExpandingFile')
 const SBON = require('SBON')
 
 //
@@ -26,25 +27,61 @@ module.exports = class SBVJ01 {
 	 */
 	constructor(path) {
 		this.path = path
-		this.file = this.data = null
+		this.version = this.name = this.entity = null
 	}
 
 	/**
 	 * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
-	 * This is a convenience method for the common workflow of loading the file.
 	 *
-	 * @return {Promise:object} - An object containing the versioned JSON payload.
+	 * @return {Promise:Object} - An object containing the versioned JSON payload.
 	 */
 	async load() {
 		// first, open the file up
-		this.file = new ConsumableFile(this.path)
-		await this.file.open()
+		let sbuf = new ConsumableFile(this.path)
+		await sbuf.open()
 
 		// read/verify the header
-		await SBVJ01._readHeader(this.file)
+		// technically, we *don't* need to do this, as _readData will aseek() to where data should begin,
+		//   but we probably want to verify that it's an SBVJ01 file anyways; _readHeader() will throw if it isn't.
+		await SBVJ01._readHeader(sbuf)
 
-		// return the SBVJ01 data payload.
-		return (this.data = await SBVJ01._readData(this.file))
+		const data = await SBVJ01._readData(sbuf)
+
+		this.version = data.version
+		this.name = data.name
+		this.entity = data.entity
+
+		await sbuf.close()
+
+		return data
+	}
+
+	/**
+	 * Saves the current entity to disk, then reloads the currently loaded entity data.
+	 *
+	 * @return {Promise:Object} - An object containing the versioned JSON payload.
+	 */
+	async save() {
+		if(this.name === null) {
+			throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.')
+		}
+		if(this.version === null) {
+			throw new Error('An entity version must be specified before attempting to save an SBVJ01 file.')
+		}
+
+		// TODO: see if Starbound cares whether or not an entity's contents are null...
+		//
+		// if(this.entity === null) {
+		// 	throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
+		// }
+
+		let sbuf = new ExpandingFile(this.path)
+
+		await sbuf.open()
+		await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity)
+		await sbuf.close()
+
+		return this.load()
 	}
 
 	/**
@@ -93,14 +130,51 @@ module.exports = class SBVJ01 {
 			console.log('Please submit this sample to the developer!')
 		}
 
-		const version = (await sbuf.read(4)).readInt32BE(0)
+		const entityVersion = (await sbuf.read(4)).readInt32BE(0)
 		const entityData = await SBON.readDynamic(sbuf)
 
 		// grab and return what we've obtained
 		return {
 			name: entityName,
 			entity: entityData,
-			version: version
+			version: entityVersion
 		}
+	}
+
+	/**
+	 * Write the currently defined entity to the originally specified file location.
+	 *
+	 * @param  {ExpandingBuffer|ExpandingFile} sbuf - The stream to write to.
+	 * @param  {String} entityName - The name of the entity (think more in terms of an entity *class*).
+	 * @param  {Number} entityVersion - The version of the entity. Must be an integer.
+	 * @param  {mixed} entityData - The data payload to write for the entity.
+	 * @return {Promise:Number} - The return value of SBON.writeDynamic()
+	 */
+	static async _writeEntity(sbuf, entityName, entityVersion, entityData) {
+		if(!(sbuf instanceof ExpandingBuffer || sbuf instanceof ExpandingFile)) {
+			throw new TypeError('SBVJ01._writeEntity expects an ExpandingBuffer or ExpandingFile.')
+		}
+
+		if(typeof entityName !== 'string') {
+			throw new TypeError('SBVJ01._writeEntity expects the provided entity name to be a string.')
+		}
+
+		if(typeof entityVersion !== 'number' || !Number.isInteger(entityVersion)) {
+			throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer.')
+		}
+
+		// write the header
+		await sbuf.write('SBVJ01')
+
+		// entity name followed by 0x01
+		await SBON.writeString(sbuf, entityName)
+		await sbuf.write([0x01])
+
+		// version int32
+		const versionBuffer = Buffer.alloc(4)
+		versionBuffer.writeInt32BE(entityVersion)
+		await sbuf.write(versionBuffer)
+
+		return SBON.writeDynamic(sbuf, entityData)
 	}
 }
