@@ -69,26 +69,6 @@ describe('SBVJ01', () => {
 			expect(res.message).to.equal('An entity name must be specified before attempting to save an SBVJ01 file.')
 		})
 
-		it('should throw if no entity version was specified', async () => {
-			const filename = tmpDir + '/test.player'
-			let player = new SBVJ01(filename)
-
-			player.name = 'TestEntity'
-			player.version = null
-			player.entity = {
-				testEntity: 100
-			}
-
-			let res = null
-			try {
-				await player.save()
-			} catch (err) {
-				res = err
-			}
-			expect(res).to.be.an.instanceof(Error)
-			expect(res.message).to.equal('An entity version must be specified before attempting to save an SBVJ01 file.')
-		})
-
 		it('should work as expected when writing a sample SBVJ01 file', async () => {
 			const filename = tmpDir + '/test.player'
 			let player = new SBVJ01(filename)
@@ -233,12 +213,12 @@ describe('SBVJ01', () => {
 			let res = null
 			let sbuf = new ExpandingBuffer()
 			try {
-				await SBVJ01._writeEntity(sbuf, 'test', null)
+				await SBVJ01._writeEntity(sbuf, 'test', 'shouldfail')
 			} catch(err) {
 				res = err
 			}
 			expect(res).to.be.an.instanceof(TypeError)
-			expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity version to be an integer.')
+			expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
 
 			res = null
 			try {
@@ -247,10 +227,10 @@ describe('SBVJ01', () => {
 				res = err
 			}
 			expect(res).to.be.an.instanceof(TypeError)
-			expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity version to be an integer.')
+			expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
 		})
 
-		it('should correctly write the SBVJ01 entity', async () => {
+		it('should correctly write a versioned SBVJ01 entity', async () => {
 			let sbuf = new ExpandingBuffer()
 			let expectedBuffer = Buffer.from([
 				0x53, 0x42, 0x56, 0x4a, 0x30, 0x31, 0x0a, 0x54,
@@ -262,6 +242,23 @@ describe('SBVJ01', () => {
 			])
 
 			let res = await SBVJ01._writeEntity(sbuf, 'TestEntity', 5, {
+				crazyTest: [1, 2, 'a']
+			})
+
+			expect(Buffer.compare(sbuf.buf, expectedBuffer)).to.equal(0)
+		})
+
+		it('should correctly write an unversioned SBVJ01 entity', async () => {
+			let sbuf = new ExpandingBuffer()
+			let expectedBuffer = Buffer.from([
+				0x53, 0x42, 0x56, 0x4a, 0x30, 0x31, 0x0a, 0x54,
+				0x65, 0x73, 0x74, 0x45, 0x6e, 0x74, 0x69, 0x74,
+				0x79, 0x00, 0x07, 0x01, 0x09, 0x63, 0x72, 0x61,
+				0x7a, 0x79, 0x54, 0x65, 0x73, 0x74, 0x06, 0x03,
+				0x04, 0x02, 0x04, 0x04, 0x05, 0x01, 0x61
+			])
+
+			let res = await SBVJ01._writeEntity(sbuf, 'TestEntity', null, {
 				crazyTest: [1, 2, 'a']
 			})
 

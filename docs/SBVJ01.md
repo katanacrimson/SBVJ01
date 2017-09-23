@@ -41,7 +41,7 @@ readPlayer(player)
 
 ### SBVJ01.version
 
-An integer (specifically within Int32 range) identifying the version of the entity.
+An integer (specifically within Int32 range) identifying the version of the entity, or null if the entity is not versioned.
 
 ### SBVJ01.name
 
