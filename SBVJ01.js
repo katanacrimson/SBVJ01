@@ -65,9 +65,6 @@ module.exports = class SBVJ01 {
 		if(this.name === null) {
 			throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.')
 		}
-		if(this.version === null) {
-			throw new Error('An entity version must be specified before attempting to save an SBVJ01 file.')
-		}
 
 		// TODO: see if Starbound cares whether or not an entity's contents are null...
 		//
@@ -124,13 +121,11 @@ module.exports = class SBVJ01 {
 		// vJSON starts with the ent name, a single 0x01 byte, the version (a signed Int32BE), then the data structure
 		const entityName = await SBON.readString(sbuf)
 
-		const weirdByte = await sbuf.read(1)
-		if(Buffer.compare(weirdByte, Buffer.from([0x01])) !== 0) {
-			console.log('Encountered a non-0x01 "weird byte".')
-			console.log('Please submit this sample to the developer!')
+		const isVersioned = await sbuf.read(1)
+		let entityVersion = null
+		if(Buffer.compare(isVersioned, Buffer.from([0x01])) === 0) {
+			entityVersion = (await sbuf.read(4)).readInt32BE(0)
 		}
-
-		const entityVersion = (await sbuf.read(4)).readInt32BE(0)
 		const entityData = await SBON.readDynamic(sbuf)
 
 		// grab and return what we've obtained
@@ -146,7 +141,7 @@ module.exports = class SBVJ01 {
 	 *
 	 * @param  {ExpandingBuffer|ExpandingFile} sbuf - The stream to write to.
 	 * @param  {String} entityName - The name of the entity (think more in terms of an entity *class*).
-	 * @param  {Number} entityVersion - The version of the entity. Must be an integer.
+	 * @param  {Number|null} entityVersion - The version of the entity. Must be an integer.
 	 * @param  {mixed} entityData - The data payload to write for the entity.
 	 * @return {Promise:Number} - The return value of SBON.writeDynamic()
 	 */
@@ -159,8 +154,8 @@ module.exports = class SBVJ01 {
 			throw new TypeError('SBVJ01._writeEntity expects the provided entity name to be a string.')
 		}
 
-		if(typeof entityVersion !== 'number' || !Number.isInteger(entityVersion)) {
-			throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer.')
+		if((typeof entityVersion !== 'number' || !Number.isInteger(entityVersion)) && entityVersion !== null) {
+			throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
 		}
 
 		// write the header
@@ -168,12 +163,16 @@ module.exports = class SBVJ01 {
 
 		// entity name followed by 0x01
 		await SBON.writeString(sbuf, entityName)
-		await sbuf.write([0x01])
+		if(entityVersion !== null) {
+			await sbuf.write([0x01])
 
-		// version int32
-		const versionBuffer = Buffer.alloc(4)
-		versionBuffer.writeInt32BE(entityVersion)
-		await sbuf.write(versionBuffer)
+			// version int32
+			const versionBuffer = Buffer.alloc(4)
+			versionBuffer.writeInt32BE(entityVersion)
+			await sbuf.write(versionBuffer)
+		} else {
+			await sbuf.write([0x00])
+		}
 
 		return SBON.writeDynamic(sbuf, entityData)
 	}
