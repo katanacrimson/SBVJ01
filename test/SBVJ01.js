@@ -96,7 +96,10 @@ describe('SBVJ01', () => {
 			expect(Buffer.compare(await fs.readFile(filename), expectedBuffer)).to.equal(0)
 		})
 
-		it('should work as expected when modifying a sample SBVJ01 file', async () => {
+		it('should work as expected when modifying a sample SBVJ01 file (slow running test)', async function() {
+			this.slow(5000)
+			this.timeout(20000)
+
 			const filename = tmpDir + '/7bb55a32b4a5fb530273d4b954f39d20.player'
 			await fs.copy(__dirname + '/samples/7bb55a32b4a5fb530273d4b954f39d20.player', filename)
 			let player = new SBVJ01(filename)
