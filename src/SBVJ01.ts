@@ -7,23 +7,28 @@
 //
 'use strict'
 
-const ConsumableBuffer = require('ConsumableBuffer')
-const ConsumableFile = require('ConsumableFile')
-const ExpandingBuffer = require('ExpandingBuffer')
-const ExpandingFile = require('ExpandingFile')
-const SBON = require('SBON')
+import { ConsumableBuffer } from 'ConsumableBuffer'
+import { ConsumableFile } from 'ConsumableFile'
+import { ExpandingBuffer } from 'ExpandingBuffer'
+import { ExpandingFile } from 'ExpandingFile'
+import { SBON } from 'SBON'
 
 //
 // SBVJ01 - provides an abstraction around reading/interacting with SBVJ01 encoded files (used for Starbound "player" files)
 //
-module.exports = class SBVJ01 {
+export class SBVJ01 {
+  path: string
+  version: number|null
+  name: string|null
+  entity: any
+
   /**
    * SBVJ01 Constructor
    *
    * @param  {String} path - The filepath for the entity file we're going to work with.
    * @return {SBVJ01}
    */
-  constructor (path) {
+  constructor (path: string) {
     this.path = path
     this.version = this.name = this.entity = null
   }
@@ -33,7 +38,7 @@ module.exports = class SBVJ01 {
    *
    * @return {Promise:Object} - An object containing the versioned JSON payload.
    */
-  async load () {
+  async load (): Promise<{ [index:string] : any }> {
     // first, open the file up
     let sbuf = new ConsumableFile(this.path)
     await sbuf.open()
@@ -59,7 +64,7 @@ module.exports = class SBVJ01 {
    *
    * @return {Promise:Object} - An object containing the versioned JSON payload.
    */
-  async save () {
+  async save (): Promise<{ [index:string] : any }> {
     if (this.name === null) {
       throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.')
     }
@@ -84,16 +89,11 @@ module.exports = class SBVJ01 {
    * @access private
    *
    * @param {ConsumableBuffer|ConsumableFile} sbuf - The stream to read from.
-   * @return {Promise:undefined} - Returns undefined.
+   * @return {Promise:void}
    */
-  static async _readHeader (sbuf) {
-    if (!(sbuf instanceof ConsumableBuffer || sbuf instanceof ConsumableFile)) {
-      throw new TypeError('SBVJ01._readHeader expects a ConsumableBuffer or ConsumableFile.')
-    }
-
+  static async _readHeader (sbuf: ConsumableBuffer|ConsumableFile): Promise<void> {
     // grab the first 6 bytes - this should be a standard SBVJ01 pak header
     // we'll compare it to what we expect to verify that this *is* an SBVJ01 file
-
     if (Buffer.compare(await sbuf.read(6), Buffer.from('SBVJ01')) !== 0) {
       throw new Error('File does not appear to be SBVJ01 format.')
     }
@@ -108,11 +108,7 @@ module.exports = class SBVJ01 {
    * @param  {ConsumableBuffer|ConsumableFile} sbuf - The stream to read from.
    * @return {Promise:Object} - An Object that contains the metadata and fileTable of the archive.
    */
-  static async _readData (sbuf) {
-    if (!(sbuf instanceof ConsumableBuffer || sbuf instanceof ConsumableFile)) {
-      throw new TypeError('SBVJ01._readData expects a ConsumableBuffer or ConsumableFile.')
-    }
-
+  static async _readData (sbuf: ConsumableBuffer|ConsumableFile): Promise<{ [index:string] : any }> {
     // ensure we're at the SBON object payload before trying to read it out
     await sbuf.aseek(6)
 
@@ -143,15 +139,7 @@ module.exports = class SBVJ01 {
    * @param  {mixed} entityData - The data payload to write for the entity.
    * @return {Promise:Number} - The return value of SBON.writeDynamic()
    */
-  static async _writeEntity (sbuf, entityName, entityVersion, entityData) {
-    if (!(sbuf instanceof ExpandingBuffer || sbuf instanceof ExpandingFile)) {
-      throw new TypeError('SBVJ01._writeEntity expects an ExpandingBuffer or ExpandingFile.')
-    }
-
-    if (typeof entityName !== 'string') {
-      throw new TypeError('SBVJ01._writeEntity expects the provided entity name to be a string.')
-    }
-
+  static async _writeEntity (sbuf: ExpandingBuffer|ExpandingFile, entityName: string, entityVersion: number|null, entityData: any): Promise<number> {
     if ((typeof entityVersion !== 'number' || !Number.isInteger(entityVersion)) && entityVersion !== null) {
       throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
     }
@@ -166,7 +154,7 @@ module.exports = class SBVJ01 {
 
       // version int32
       const versionBuffer = Buffer.alloc(4)
-      versionBuffer.writeInt32BE(entityVersion)
+      versionBuffer.writeInt32BE(entityVersion, 0)
       await sbuf.write(versionBuffer)
     } else {
       await sbuf.write([0x00])
