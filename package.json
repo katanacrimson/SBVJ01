@@ -2,9 +2,11 @@
   "name": "SBVJ01",
   "version": "2.1.2",
   "description": "SBVJ01 - Starbound Versioned JSON library",
-  "main": "SBVJ01.js",
+  "main": "build/SBVJ01.js",
+  "types": "build/SBVJ01.d.ts",
   "scripts": {
-    "test": "standard && mocha"
+    "test": "standard *.ts && mocha --compilers ts:ts-node/register ./test/*.spec.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,8 @@
   },
   "homepage": "https://github.com/damianb/SBVJ01#readme",
   "dependencies": {
+    "@types/fs-extra": "^4.0.2",
+    "@types/node": "^8.0.33",
     "ConsumableBuffer": "github:damianb/ConsumableBuffer",
     "ConsumableFile": "github:damianb/ConsumableFile",
     "ExpandingBuffer": "github:damianb/ExpandingBuffer",
@@ -29,8 +33,20 @@
     "fs-extra": "^4.0.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
     "chai": "^4.1.2",
+    "eslint-plugin-typescript": "^0.8.0",
     "mocha": "^3.5.3",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3",
+    "typescript-eslint-parser": "^8.0.0"
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ]
   }
 }

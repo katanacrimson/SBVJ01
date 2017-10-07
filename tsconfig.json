@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"declaration": true,
+		"outDir": "./build",
+		"declarationDir": "./build/",
+		"target": "ES2017",
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"module": "commonjs",
+		"moduleResolution": "node"
+	},
+	"include": [
+		"./src/**/*"
+	]
+}

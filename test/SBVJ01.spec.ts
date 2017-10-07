@@ -5,15 +5,15 @@
 // @license MIT license
 // @url <https://github.com/damianb/SBVJ01>
 //
-/* globals describe it afterEach */
+/* eslint-env mocha */
 'use strict'
 
-const fs = require('fs-extra')
-const path = require('path')
-const { expect } = require('chai')
-const ConsumableBuffer = require('ConsumableBuffer')
-const ExpandingBuffer = require('ExpandingBuffer')
-const SBVJ01 = require('./../SBVJ01')
+import * as fs from 'fs-extra'
+import * as path from 'path'
+import { expect } from 'chai'
+import { ConsumableBuffer } from 'ConsumableBuffer'
+import { ExpandingBuffer } from 'ExpandingBuffer'
+import { SBVJ01 } from './../src/SBVJ01'
 
 describe('SBVJ01', () => {
   const tmpDir = path.join(__dirname, '/tmp')
@@ -116,17 +116,6 @@ describe('SBVJ01', () => {
   })
 
   describe('SBVJ01._readHeader', () => {
-    it('should throw if passed something other than a ConsumableBuffer or ConsumableFile', async () => {
-      let res = null
-      try {
-        await SBVJ01._readHeader(null)
-      } catch (err) {
-        res = err
-      }
-      expect(res).to.be.an.instanceof(TypeError)
-      expect(res.message).to.equal('SBVJ01._readHeader expects a ConsumableBuffer or ConsumableFile.')
-    })
-
     it('should throw if the file does not appear to be an SBVJ01 formatted archive', async () => {
       const buf = Buffer.from('LOLNOTTHATFILETYPE')
       const sbuf = new ConsumableBuffer(buf)
@@ -154,17 +143,6 @@ describe('SBVJ01', () => {
   })
 
   describe('SBVJ01._readData', () => {
-    it('should throw if passed something other than a ConsumableBuffer or ConsumableFile', async () => {
-      let res = null
-      try {
-        await SBVJ01._readData(null)
-      } catch (err) {
-        res = err
-      }
-      expect(res).to.be.an.instanceof(TypeError)
-      expect(res.message).to.equal('SBVJ01._readData expects a ConsumableBuffer or ConsumableFile.')
-    })
-
     it('should correctly return a JS Object from a versioned JSON payload', async () => {
       // todo
       const buf = Buffer.from([
@@ -188,43 +166,12 @@ describe('SBVJ01', () => {
   })
 
   describe('SBVJ01._writeEntity', () => {
-    it('should throw if passed something other than an ExpandingBuffer or ExpandingFile', async () => {
-      let res = null
-      try {
-        await SBVJ01._writeEntity(null)
-      } catch (err) {
-        res = err
-      }
-      expect(res).to.be.an.instanceof(TypeError)
-      expect(res.message).to.equal('SBVJ01._writeEntity expects an ExpandingBuffer or ExpandingFile.')
-    })
-
-    it('should throw if passed something other than a string for the entity name', async () => {
-      let res = null
-      let sbuf = new ExpandingBuffer()
-      try {
-        await SBVJ01._writeEntity(sbuf, null)
-      } catch (err) {
-        res = err
-      }
-      expect(res).to.be.an.instanceof(TypeError)
-      expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity name to be a string.')
-    })
-
     it('should throw if passed something other than an integer for the entity version', async () => {
-      let res = null
+      let res: Error = new Error() // because typescript is stupid.
       let sbuf = new ExpandingBuffer()
-      try {
-        await SBVJ01._writeEntity(sbuf, 'test', 'shouldfail')
-      } catch (err) {
-        res = err
-      }
-      expect(res).to.be.an.instanceof(TypeError)
-      expect(res.message).to.equal('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
 
-      res = null
       try {
-        await SBVJ01._writeEntity(sbuf, 'test', 0.5)
+        await SBVJ01._writeEntity(sbuf, 'test', 0.5, null)
       } catch (err) {
         res = err
       }

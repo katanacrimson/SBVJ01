@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"target": "ES2017",
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"module": "commonjs",
+		"moduleResolution": "node"
+	},
+	"include": [
+		"./**/*"
+	]
+}
