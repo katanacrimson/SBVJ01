@@ -15,22 +15,6 @@ export declare class SBVJ01 {
      */
     constructor(path: string);
     /**
-     * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
-     *
-     * @return {Promise:Object} - An object containing the versioned JSON payload.
-     */
-    load(): Promise<{
-        [index: string]: any;
-    }>;
-    /**
-     * Saves the current entity to disk, then reloads the currently loaded entity data.
-     *
-     * @return {Promise:Object} - An object containing the versioned JSON payload.
-     */
-    save(): Promise<{
-        [index: string]: any;
-    }>;
-    /**
      * Reads the header of a file and identifies if it is SBVJ01 format.
      * @access private
      *
@@ -58,4 +42,20 @@ export declare class SBVJ01 {
      * @return {Promise:Number} - The return value of SBON.writeDynamic()
      */
     static _writeEntity(sbuf: ExpandingBuffer | ExpandingFile, entityName: string, entityVersion: number | null, entityData: any): Promise<number>;
+    /**
+     * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
+     *
+     * @return {Promise:Object} - An object containing the versioned JSON payload.
+     */
+    load(): Promise<{
+        [index: string]: any;
+    }>;
+    /**
+     * Saves the current entity to disk, then reloads the currently loaded entity data.
+     *
+     * @return {Promise:Object} - An object containing the versioned JSON payload.
+     */
+    save(): Promise<{
+        [index: string]: any;
+    }>;
 }

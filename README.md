@@ -1,8 +1,4 @@
-# SBVJ01
-
-[![Build Status](https://travis-ci.org/damianb/SBVJ01.svg?branch=master)](https://travis-ci.org/damianb/SBVJ01)
-
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/standard/standard)
+# SBVJ01 [![Build Status](https://travis-ci.org/damianb/SBVJ01.svg?branch=master)](https://travis-ci.org/damianb/SBVJ01)
 
 ## A node.js library for working with the "SBVJ01" format (Starbound Versioned JSON).
 
