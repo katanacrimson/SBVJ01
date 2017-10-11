@@ -25,46 +25,6 @@ class SBVJ01 {
         this.version = this.name = this.entity = null;
     }
     /**
-     * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
-     *
-     * @return {Promise:Object} - An object containing the versioned JSON payload.
-     */
-    async load() {
-        // first, open the file up
-        let sbuf = new ConsumableFile_1.ConsumableFile(this.path);
-        await sbuf.open();
-        // read/verify the header
-        // technically, we *don't* need to do this, as _readData will aseek() to where data should begin,
-        //   but we probably want to verify that it's an SBVJ01 file anyways; _readHeader() will throw if it isn't.
-        await SBVJ01._readHeader(sbuf);
-        const data = await SBVJ01._readData(sbuf);
-        this.version = data.version;
-        this.name = data.name;
-        this.entity = data.entity;
-        await sbuf.close();
-        return data;
-    }
-    /**
-     * Saves the current entity to disk, then reloads the currently loaded entity data.
-     *
-     * @return {Promise:Object} - An object containing the versioned JSON payload.
-     */
-    async save() {
-        if (this.name === null) {
-            throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.');
-        }
-        // TODO: see if Starbound cares whether or not an entity's contents are null...
-        //
-        // if (this.entity === null) {
-        //  throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
-        // }
-        let sbuf = new ExpandingFile_1.ExpandingFile(this.path);
-        await sbuf.open();
-        await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity);
-        await sbuf.close();
-        return this.load();
-    }
-    /**
      * Reads the header of a file and identifies if it is SBVJ01 format.
      * @access private
      *
@@ -77,7 +37,7 @@ class SBVJ01 {
         if (Buffer.compare(await sbuf.read(6), Buffer.from('SBVJ01')) !== 0) {
             throw new Error('File does not appear to be SBVJ01 format.');
         }
-        return undefined;
+        return;
     }
     /**
      * Reads the versioned JSON object.
@@ -132,6 +92,46 @@ class SBVJ01 {
             await sbuf.write([0x00]);
         }
         return SBON_1.SBON.writeDynamic(sbuf, entityData);
+    }
+    /**
+     * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
+     *
+     * @return {Promise:Object} - An object containing the versioned JSON payload.
+     */
+    async load() {
+        // first, open the file up
+        let sbuf = new ConsumableFile_1.ConsumableFile(this.path);
+        await sbuf.open();
+        // read/verify the header
+        // technically, we *don't* need to do this, as _readData will aseek() to where data should begin,
+        //   but we probably want to verify that it's an SBVJ01 file anyways; _readHeader() will throw if it isn't.
+        await SBVJ01._readHeader(sbuf);
+        const data = await SBVJ01._readData(sbuf);
+        this.version = data.version;
+        this.name = data.name;
+        this.entity = data.entity;
+        await sbuf.close();
+        return data;
+    }
+    /**
+     * Saves the current entity to disk, then reloads the currently loaded entity data.
+     *
+     * @return {Promise:Object} - An object containing the versioned JSON payload.
+     */
+    async save() {
+        if (this.name === null) {
+            throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.');
+        }
+        // TODO: see if Starbound cares whether or not an entity's contents are null...
+        //
+        // if (this.entity === null) {
+        //  throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
+        // }
+        let sbuf = new ExpandingFile_1.ExpandingFile(this.path);
+        await sbuf.open();
+        await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity);
+        await sbuf.close();
+        return this.load();
     }
 }
 exports.SBVJ01 = SBVJ01;
