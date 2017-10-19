@@ -1,3 +1,13 @@
 {
-  "extends": "tslint-config-standard"
+  "extends": "tslint-config-standard",
+  "rules": {
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
+    "member-access": true
+  }
 }

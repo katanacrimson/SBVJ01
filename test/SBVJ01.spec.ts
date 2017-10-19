@@ -1,25 +1,22 @@
-//
-// SBVJ01 - JS library for working with Starbound Versioned JSON format.
-// ---
-// @copyright (c) 2017 Damian Bushong <katana@odios.us>
-// @license MIT license
-// @url <https://github.com/damianb/SBVJ01>
-//
-/* eslint-env mocha */
-'use strict'
+/**
+ * SBVJ01 - JS library for working with Starbound Versioned JSON format.
+ *
+ * @copyright (c) 2017 Damian Bushong <katana@odios.us>
+ * @license MIT license
+ * @url <https://github.com/damianb/SBVJ01>
+ */
 
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import { expect } from 'chai'
-import { ConsumableBuffer } from 'ConsumableBuffer'
-import { ExpandingBuffer } from 'ExpandingBuffer'
+import { ConsumableBuffer, ExpandingBuffer } from 'ByteAccordion'
 import { SBVJ01 } from './../src/SBVJ01'
 
 describe('SBVJ01', () => {
   const tmpDir = path.join(__dirname, '/tmp')
 
   describe('SBVJ01.load', () => {
-    it('should be able to read a sample SBVJ01 file (slow running test)', async function () {
+    it('should be able to read a sample SBVJ01 file (slow running test)', async function () { // tslint:disable-line
       // this is a lot of parsing - trying to parse an entire player file takes a little bit
       //   so, we'll adjust slow/timeout accordingly
       this.slow(5000)
@@ -96,7 +93,7 @@ describe('SBVJ01', () => {
       expect(Buffer.compare(await fs.readFile(filename), expectedBuffer)).to.equal(0)
     })
 
-    it('should work as expected when modifying a sample SBVJ01 file (slow running test)', async function () {
+    it('should work as expected when modifying a sample SBVJ01 file (slow running test)', async function () { // tslint:disable-line
       this.slow(5000)
       this.timeout(20000)
 

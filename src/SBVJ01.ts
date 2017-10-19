@@ -1,32 +1,62 @@
-//
-// SBVJ01 - JS library for working with Starbound Versioned JSON format.
-// ---
-// @copyright (c) 2017 Damian Bushong <katana@odios.us>
-// @license MIT license
-// @url <https://github.com/damianb/SBVJ01>
-//
-'use strict'
+/**
+ * SBVJ01 - JS library for working with Starbound Versioned JSON format.
+ *
+ * @copyright (c) 2017 Damian Bushong <katana@odios.us>
+ * @license MIT license
+ * @url <https://github.com/damianb/SBVJ01>
+ */
 
-import { ConsumableBuffer } from 'ConsumableBuffer'
-import { ConsumableFile } from 'ConsumableFile'
-import { ExpandingBuffer } from 'ExpandingBuffer'
-import { ExpandingFile } from 'ExpandingFile'
+import {
+  ConsumableFile,
+  ExpandingFile,
+  ConsumableResource,
+  ExpandingResource
+} from 'ByteAccordion'
 import { SBON } from 'SBON'
 
-//
-// SBVJ01 - provides an abstraction around reading/interacting with SBVJ01 encoded files (used for Starbound "player" files)
-//
 export class SBVJ01 {
-  path: string
-  version: number|null
-  name: string|null
-  entity: any
+  /**
+   * The path to the SBVJ01-encoded file.
+   *
+   * @private
+   */
+  public path: string
+
+  /**
+   * The version of the SBVJ01-encoded entity. If null, versioning is not used.
+   *   This should specifically be an Int32-compatible integer.
+   */
+  public version: number|null
+
+  /**
+   * The name of the SBVJ01-encoded entity.
+   *   Note that this behaves more as an entity "class" than an individual entity name.
+   */
+  public name: string|null
+
+  /**
+   * The payload of the SBVJ01-encoded entity.
+   */
+  public entity: any
 
   /**
    * SBVJ01 Constructor
    *
-   * @param  {String} path - The filepath for the entity file we're going to work with.
+   * @param  path - The filepath for the entity file we're going to work with.
    * @return {SBVJ01}
+   *
+   * @example
+   * ```
+   * import { SBVJ01 } from 'SBVJ01'
+   * const filepath = '/path/to/00000000000a0a0a12093123.player'
+   * const player = new SBVJ01(filepath)
+   *
+   * const { entity, name, version } = await player.load()
+   *
+   * // version is the entity version (Starbound has lua which handles upconverting between entity versions),
+   * //   name is a string with the entity name (think type),
+   * //   and entity which contains the entire data structure.
+   * ```
    */
   constructor (path: string) {
     this.path = path
@@ -35,12 +65,15 @@ export class SBVJ01 {
 
   /**
    * Reads the header of a file and identifies if it is SBVJ01 format.
-   * @access private
    *
-   * @param {ConsumableBuffer|ConsumableFile} sbuf - The stream to read from.
-   * @return {Promise:void}
+   * @private
+   *
+   * @throws {Error} - Throws when the provided file does not appear to be an SBVJ01-encoded file.
+   *
+   * @param  sbuf - The stream to read from.
+   * @return {Promise<void>}
    */
-  static async _readHeader (sbuf: ConsumableBuffer|ConsumableFile): Promise<void> {
+  public static async _readHeader (sbuf: ConsumableResource): Promise<void> {
     // grab the first 6 bytes - this should be a standard SBVJ01 pak header
     // we'll compare it to what we expect to verify that this *is* an SBVJ01 file
     if (Buffer.compare(await sbuf.read(6), Buffer.from('SBVJ01')) !== 0) {
@@ -52,12 +85,13 @@ export class SBVJ01 {
 
   /**
    * Reads the versioned JSON object.
-   * @access private
    *
-   * @param  {ConsumableBuffer|ConsumableFile} sbuf - The stream to read from.
-   * @return {Promise:Object} - An Object that contains the metadata and fileTable of the archive.
+   * @private
+   *
+   * @param  sbuf - The stream to read from.
+   * @return {Promise<Object>} - An Object that contains the metadata and fileTable of the archive.
    */
-  static async _readData (sbuf: ConsumableBuffer|ConsumableFile): Promise<{ [index: string]: any }> {
+  public static async _readData (sbuf: ConsumableResource): Promise<{ [index: string]: any }> {
     // ensure we're at the SBON object payload before trying to read it out
     await sbuf.aseek(6)
 
@@ -82,14 +116,18 @@ export class SBVJ01 {
   /**
    * Write the currently defined entity to the originally specified file location.
    *
-   * @param  {ExpandingBuffer|ExpandingFile} sbuf - The stream to write to.
-   * @param  {String} entityName - The name of the entity (think more in terms of an entity *class*).
-   * @param  {Number|null} entityVersion - The version of the entity. Must be an integer.
-   * @param  {mixed} entityData - The data payload to write for the entity.
-   * @return {Promise:Number} - The return value of SBON.writeDynamic()
+   * @private
+   *
+   * @throws {TypeError} - Throws when the entity version is not a proper integer or null.
+   *
+   * @param  sbuf - The resource to write to.
+   * @param  entityName - The name of the entity (think more in terms of an entity *class*).
+   * @param  entityVersion - The version of the entity. Must be an integer.
+   * @param  entityData - The data payload to write for the entity.
+   * @return {Promise<number>} - The return value of SBON.writeDynamic()
    */
-  static async _writeEntity (sbuf: ExpandingBuffer|ExpandingFile, entityName: string, entityVersion: number|null, entityData: any): Promise<number> {
-    if ((typeof entityVersion !== 'number' || !Number.isInteger(entityVersion)) && entityVersion !== null) {
+  public static async _writeEntity (sbuf: ExpandingResource, entityName: string, entityVersion: number|null, entityData: any): Promise<number> {
+    if ((typeof entityVersion !== 'number' || !Number.isInteger(entityVersion) || isNaN(entityVersion) || !isFinite(entityVersion)) && entityVersion !== null) {
       throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
     }
 
@@ -115,9 +153,18 @@ export class SBVJ01 {
   /**
    * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
    *
-   * @return {Promise:Object} - An object containing the versioned JSON payload.
+   * @return {Promise<Object>} - An object containing the versioned JSON payload.
+   *
+   * @example
+   * ```
+   * const filepath = '/path/to/sbvj01/file.player'
+   * const player = new SBVJ01(filepath)
+   * const { entity, name, version } = await player.load()
+   *
+   * // you know have access to all the entity information. yay!
+   * ```
    */
-  async load (): Promise<{ [index: string]: any }> {
+  public async load (): Promise<{ [index: string]: any }> {
     // first, open the file up
     let sbuf = new ConsumableFile(this.path)
     await sbuf.open()
@@ -141,9 +188,23 @@ export class SBVJ01 {
   /**
    * Saves the current entity to disk, then reloads the currently loaded entity data.
    *
-   * @return {Promise:Object} - An object containing the versioned JSON payload.
+   * @return {Promise<Object>} - An object containing the versioned JSON payload.
+   *
+   * @throws {Error} - Throws if no entity name was ever specified.
+   *
+   * @example
+   * ```
+   * const filepath = '/path/to/sbvj01/file.player'
+   * const player = new SBVJ01(filepath)
+   * let { entity, name, version } = await player.load()
+   *
+   * player.entity.name = 'MyNewName'
+   *
+   * { entity, name, version } = await player.save()
+   * // entity, name, version now contain the latest changes...as does the file.player file itself.
+   * ```
    */
-  async save (): Promise<{ [index: string]: any }> {
+  public async save (): Promise<{ [index: string]: any }> {
     if (this.name === null) {
       throw new Error('An entity name must be specified before attempting to save an SBVJ01 file.')
     }
