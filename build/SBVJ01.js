@@ -1,11 +1,11 @@
 "use strict";
-/**
- * SBVJ01 - JS library for working with Starbound Versioned JSON format.
- *
- * @copyright (c) 2017 Damian Bushong <katana@odios.us>
- * @license MIT license
- * @url <https://github.com/damianb/SBVJ01>
- */
+//
+// SBVJ01 - JS library for working with Starbound Versioned JSON format.
+//
+// @copyright (c) 2018 Damian Bushong <katana@odios.us>
+// @license MIT license
+// @url <https://github.com/damianb/SBVJ01>
+//
 Object.defineProperty(exports, "__esModule", { value: true });
 const ByteAccordion_1 = require("ByteAccordion");
 const SBON_1 = require("SBON");

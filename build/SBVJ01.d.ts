@@ -1,10 +1,3 @@
-/**
- * SBVJ01 - JS library for working with Starbound Versioned JSON format.
- *
- * @copyright (c) 2017 Damian Bushong <katana@odios.us>
- * @license MIT license
- * @url <https://github.com/damianb/SBVJ01>
- */
 import { ConsumableResource, ExpandingResource } from 'ByteAccordion';
 export declare class SBVJ01 {
     /**

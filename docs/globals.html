@@ -660,10 +660,8 @@ html.minimal .tsd-generator { padding: 0; }
   html.minimal .content-wrap { padding-left: 0; } }
 
 dl.tsd-comment-tags { overflow: hidden; }
-dl.tsd-comment-tags dt { float: left; padding: 1px 5px; margin: 0 10px 0 0; border-radius: 4px; border: 1px solid #808080; color: #808080; font-size: 0.8em; font-weight: normal; }
+dl.tsd-comment-tags dt { clear: both; float: left; padding: 1px 5px; margin: 0 10px 0 0; border-radius: 4px; border: 1px solid #808080; color: #808080; font-size: 0.8em; font-weight: normal; }
 dl.tsd-comment-tags dd { margin: 0 0 10px 0; }
-dl.tsd-comment-tags dt:before, dl.tsd-comment-tags dt:before { display: table; content: " "; }
-dl.tsd-comment-tags dd pre, dl.tsd-comment-tags dd:after { clear: both; }
 dl.tsd-comment-tags p { margin: 0; }
 
 .tsd-panel.tsd-comment .lead { font-size: 1.1em; line-height: 1.333em; margin-bottom: 2em; }
@@ -919,14 +917,14 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h1 id="sbvj01-build-status-https-travis-ci-org-damianb-sbvj01-svg-branch-master-https-travis-ci-org-damianb-sbvj01-">SBVJ01 <a href="https://travis-ci.org/damianb/SBVJ01"><img src="https://travis-ci.org/damianb/SBVJ01.svg?branch=master" alt="Build Status"></a></h1>
+			<h1 id="sbvj01">SBVJ01</h1>
 			<h2 id="a-node-js-library-for-working-with-the-sbvj01-format-starbound-versioned-json-">A node.js library for working with the &quot;SBVJ01&quot; format (Starbound Versioned JSON).</h2>
 			<h3 id="what-is-sbvj01-">What is SBVJ01?</h3>
 			<p>SBVJ01 is a proprietary binary format wrapping around an &quot;SBON&quot; data structure created by ChuckleFish for the game Starbound.</p>
 			<p>For some documentation, see the reverse engineering notes on SBVJ01, <a href="https://github.com/blixt/py-starbound/blob/master/FORMATS.md#sbvj01">available here</a>.</p>
 			<h3 id="how-do-i-install-this-library-">How do I install this library?</h3>
 			<p>Ensure you have at least node.js v7.6+, and then...</p>
-			<pre><code class="lang-bash">$ npm i -s damianb/SBVJ01
+			<pre><code class="lang-bash">$ yarn add https://github.com/damianb/SBVJ01.git
 </code></pre>
 			<h3 id="how-do-i-use-this-library-">How do I use this library?</h3>
 			<p>In brief:</p>
