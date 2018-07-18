@@ -1,4 +1,4 @@
-# SBVJ01 [![Build Status](https://travis-ci.org/damianb/SBVJ01.svg?branch=master)](https://travis-ci.org/damianb/SBVJ01)
+# SBVJ01
 
 ## A node.js library for working with the "SBVJ01" format (Starbound Versioned JSON).
 
@@ -13,7 +13,7 @@ For some documentation, see the reverse engineering notes on SBVJ01, [available 
 Ensure you have at least node.js v7.6+, and then...
 
 ``` bash
-$ npm i -s damianb/SBVJ01
+$ yarn add https://github.com/damianb/SBVJ01.git
 ```
 
 ### How do I use this library?

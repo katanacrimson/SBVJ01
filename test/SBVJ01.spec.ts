@@ -1,10 +1,10 @@
-/**
- * SBVJ01 - JS library for working with Starbound Versioned JSON format.
- *
- * @copyright (c) 2017 Damian Bushong <katana@odios.us>
- * @license MIT license
- * @url <https://github.com/damianb/SBVJ01>
- */
+//
+// SBVJ01 - JS library for working with Starbound Versioned JSON format.
+//
+// @copyright (c) 2018 Damian Bushong <katana@odios.us>
+// @license MIT license
+// @url <https://github.com/damianb/SBVJ01>
+//
 
 import * as fs from 'fs-extra'
 import * as path from 'path'

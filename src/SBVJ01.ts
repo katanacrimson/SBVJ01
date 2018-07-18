@@ -1,10 +1,10 @@
-/**
- * SBVJ01 - JS library for working with Starbound Versioned JSON format.
- *
- * @copyright (c) 2017 Damian Bushong <katana@odios.us>
- * @license MIT license
- * @url <https://github.com/damianb/SBVJ01>
- */
+//
+// SBVJ01 - JS library for working with Starbound Versioned JSON format.
+//
+// @copyright (c) 2018 Damian Bushong <katana@odios.us>
+// @license MIT license
+// @url <https://github.com/damianb/SBVJ01>
+//
 
 import {
   ConsumableFile,
@@ -26,13 +26,13 @@ export class SBVJ01 {
    * The version of the SBVJ01-encoded entity. If null, versioning is not used.
    *   This should specifically be an Int32-compatible integer.
    */
-  public version: number|null
+  public version: number | null
 
   /**
    * The name of the SBVJ01-encoded entity.
    *   Note that this behaves more as an entity "class" than an individual entity name.
    */
-  public name: string|null
+  public name: string | null
 
   /**
    * The payload of the SBVJ01-encoded entity.
@@ -126,7 +126,7 @@ export class SBVJ01 {
    * @param  entityData - The data payload to write for the entity.
    * @return {Promise<number>} - The return value of SBON.writeDynamic()
    */
-  public static async _writeEntity (sbuf: ExpandingResource, entityName: string, entityVersion: number|null, entityData: any): Promise<number> {
+  public static async _writeEntity (sbuf: ExpandingResource, entityName: string, entityVersion: number | null, entityData: any): Promise<number> {
     if ((typeof entityVersion !== 'number' || !Number.isInteger(entityVersion) || isNaN(entityVersion) || !isFinite(entityVersion)) && entityVersion !== null) {
       throw new TypeError('SBVJ01._writeEntity expects the provided entity version to be an integer or null.')
     }
