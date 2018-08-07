@@ -10,13 +10,19 @@ pipeline {
     failure {
       updateGitlabCommitStatus name: 'jenkins', state: 'failed'
     }
+    unstable {
+      updateGitlabCommitStatus name: 'jenkins', state: 'failed'
+    }
+    aborted {
+      updateGitlabCommitStatus name: 'jenkins', state: 'canceled'
+    }
     success {
       updateGitlabCommitStatus name: 'jenkins', state: 'success'
     }
   }
   agent {
     docker {
-      image 'node:8.11.1-alpine'
+      image 'node:8.11.3-alpine'
     }
   }
   environment {
@@ -25,7 +31,7 @@ pipeline {
   stages {
     stage('Prepare') {
       environment {
-        YARN_VERSION = '1.6.0'
+        YARN_VERSION = '1.9.4'
         NPM_CONFIG_LOGLEVEL = 'warn'
       }
       steps {
@@ -53,17 +59,8 @@ pipeline {
     }
 
     stage('Build') {
-      parallel {
-        stage('Build Docs') {
-          steps {
-            sh 'npm run docs'
-          }
-        }
-        stage('Build JS') {
-          steps {
-            sh 'npm run build'
-          }
-        }
+      steps {
+        sh 'npm run build'
       }
     }
   }
