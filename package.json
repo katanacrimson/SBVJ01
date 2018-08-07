@@ -1,5 +1,5 @@
 {
-  "name": "SBVJ01",
+  "name": "sbvj01",
   "version": "2.3.0",
   "description": "SBVJ01 - Starbound Versioned JSON library",
   "main": "build/SBVJ01.js",
@@ -30,8 +30,8 @@
   "dependencies": {
     "@types/fs-extra": "^5.0.4",
     "@types/node": "^8.0.45",
-    "ByteAccordion": "github:damianb/ByteAccordion#1.1.0",
-    "SBON": "github:damianb/SBON#2.3.0",
+    "byteaccordion": "^1.1.2",
+    "sbon": "^2.3.2",
     "fs-extra": "^7.0.0"
   },
   "devDependencies": {

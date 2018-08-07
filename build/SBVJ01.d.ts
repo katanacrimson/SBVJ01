@@ -1,4 +1,4 @@
-import { ConsumableResource, ExpandingResource } from 'ByteAccordion';
+import { ConsumableResource, ExpandingResource } from 'byteaccordion';
 export declare class SBVJ01 {
     /**
      * The path to the SBVJ01-encoded file.
@@ -28,7 +28,7 @@ export declare class SBVJ01 {
      *
      * @example
      * ```
-     * import { SBVJ01 } from 'SBVJ01'
+     * import { SBVJ01 } from 'sbvj01'
      * const filepath = '/path/to/00000000000a0a0a12093123.player'
      * const player = new SBVJ01(filepath)
      *

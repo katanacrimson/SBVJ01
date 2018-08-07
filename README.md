@@ -13,7 +13,7 @@ For some documentation, see the reverse engineering notes on SBVJ01, [available 
 Ensure you have at least node.js v7.6+, and then...
 
 ``` bash
-$ yarn add https://github.com/damianb/SBVJ01.git
+$ yarn add sbvj01
 ```
 
 ### How do I use this library?

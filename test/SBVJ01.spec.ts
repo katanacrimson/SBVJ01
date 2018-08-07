@@ -9,7 +9,7 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import { expect } from 'chai'
-import { ConsumableBuffer, ExpandingBuffer } from 'ByteAccordion'
+import { ConsumableBuffer, ExpandingBuffer } from 'byteaccordion'
 import { SBVJ01 } from './../src/SBVJ01'
 
 describe('SBVJ01', () => {

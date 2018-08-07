@@ -11,8 +11,8 @@ import {
   ExpandingFile,
   ConsumableResource,
   ExpandingResource
-} from 'ByteAccordion'
-import { SBON } from 'SBON'
+} from 'byteaccordion'
+import { SBON } from 'sbon'
 
 export class SBVJ01 {
   /**
@@ -47,7 +47,7 @@ export class SBVJ01 {
    *
    * @example
    * ```
-   * import { SBVJ01 } from 'SBVJ01'
+   * import { SBVJ01 } from 'sbvj01'
    * const filepath = '/path/to/00000000000a0a0a12093123.player'
    * const player = new SBVJ01(filepath)
    *

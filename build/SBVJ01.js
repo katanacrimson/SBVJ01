@@ -7,8 +7,8 @@
 // @url <https://github.com/damianb/SBVJ01>
 //
 Object.defineProperty(exports, "__esModule", { value: true });
-const ByteAccordion_1 = require("ByteAccordion");
-const SBON_1 = require("SBON");
+const byteaccordion_1 = require("byteaccordion");
+const sbon_1 = require("sbon");
 class SBVJ01 {
     /**
      * SBVJ01 Constructor
@@ -18,7 +18,7 @@ class SBVJ01 {
      *
      * @example
      * ```
-     * import { SBVJ01 } from 'SBVJ01'
+     * import { SBVJ01 } from 'sbvj01'
      * const filepath = '/path/to/00000000000a0a0a12093123.player'
      * const player = new SBVJ01(filepath)
      *
@@ -63,13 +63,13 @@ class SBVJ01 {
         // ensure we're at the SBON object payload before trying to read it out
         await sbuf.aseek(6);
         // vJSON starts with the ent name, a single 0x01 byte, the version (a signed Int32BE), then the data structure
-        const entityName = await SBON_1.SBON.readString(sbuf);
+        const entityName = await sbon_1.SBON.readString(sbuf);
         const isVersioned = await sbuf.read(1);
         let entityVersion = null;
         if (Buffer.compare(isVersioned, Buffer.from([0x01])) === 0) {
             entityVersion = (await sbuf.read(4)).readInt32BE(0);
         }
-        const entityData = await SBON_1.SBON.readDynamic(sbuf);
+        const entityData = await sbon_1.SBON.readDynamic(sbuf);
         // grab and return what we've obtained
         return {
             name: entityName,
@@ -97,7 +97,7 @@ class SBVJ01 {
         // write the header
         await sbuf.write('SBVJ01');
         // entity name followed by 0x01
-        await SBON_1.SBON.writeString(sbuf, entityName);
+        await sbon_1.SBON.writeString(sbuf, entityName);
         if (entityVersion !== null) {
             await sbuf.write([0x01]);
             // version int32
@@ -108,7 +108,7 @@ class SBVJ01 {
         else {
             await sbuf.write([0x00]);
         }
-        return SBON_1.SBON.writeDynamic(sbuf, entityData);
+        return sbon_1.SBON.writeDynamic(sbuf, entityData);
     }
     /**
      * Loads the file, verifies the header and then loads the versioned JSON payload and returns it.
@@ -126,7 +126,7 @@ class SBVJ01 {
      */
     async load() {
         // first, open the file up
-        let sbuf = new ByteAccordion_1.ConsumableFile(this.path);
+        let sbuf = new byteaccordion_1.ConsumableFile(this.path);
         await sbuf.open();
         // read/verify the header
         // technically, we *don't* need to do this, as _readData will aseek() to where data should begin,
@@ -167,7 +167,7 @@ class SBVJ01 {
         // if (this.entity === null) {
         //  throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
         // }
-        let sbuf = new ByteAccordion_1.ExpandingFile(this.path);
+        let sbuf = new byteaccordion_1.ExpandingFile(this.path);
         await sbuf.open();
         await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity);
         await sbuf.close();
