@@ -18,18 +18,4 @@ $ yarn add https://github.com/damianb/SBVJ01.git
 
 ### How do I use this library?
 
-In brief:
-
-``` js
-'use strict'
-const SBVJ01 = require('SBVJ01')
-const ConsumableBuffer = require('ConsumableBuffer')
-
-const player = new SBVJ01('/path/to/file/00077a7a7f7c1237127837123.player')
-player.load().then(async (data) => {
-	console.dir(data)
-	// ^ gives you a native JS representation of the entity that SBVJ01 just read.
-})
-```
-
-Full library documentation is available in the repository under the /docs/ directory.
+Reference the [documentation](https://damianb.github.io/SBVJ01/).
