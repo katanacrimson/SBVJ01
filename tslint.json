@@ -8,6 +8,7 @@
       "property-declaration",
       "member-variable-declaration"
     ],
+    "no-unused-variable": null,
     "member-access": true
   }
 }
