@@ -2,7 +2,7 @@
 
 pipeline {
   options {
-    gitLabConnection('gitlab@nebula')
+    gitLabConnection('gitlab@cr.imson.co')
     gitlabBuilds(builds: ['jenkins'])
     timestamps()
   }
