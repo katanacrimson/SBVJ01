@@ -52,7 +52,7 @@ pipeline {
           cat << PROPERTIES > ./sonar.properties
 sonar.host.url=https://sonar.cr.imson.co/
 sonar.projectKey=smtk:sbvj01
-sonar.projectName=SBON
+sonar.projectName=SBVJ01
 sonar.login=${SONARQUBE_API_TOKEN}
 sonar.projectVersion=1.0
 sonar.sourceEncoding=UTF-8
