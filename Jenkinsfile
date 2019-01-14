@@ -19,6 +19,9 @@ pipeline {
     success {
       updateGitlabCommitStatus name: 'jenkins', state: 'success'
     }
+    always {
+      cleanWs()
+    }
   }
   agent {
     docker {
