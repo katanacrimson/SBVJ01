@@ -20,6 +20,9 @@ pipeline {
     success {
       updateGitlabCommitStatus name: 'sonar', state: 'success'
     }
+    always {
+      cleanWs()
+    }
   }
   agent {
     docker {
