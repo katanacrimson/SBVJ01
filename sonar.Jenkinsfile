@@ -52,7 +52,7 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'ed17af17-cf57-494e-a335-921ac149af1b', variable: 'SONARQUBE_API_TOKEN')]) {
           sh """
-          cat << PROPERTIES > ./sonar.properties
+          cat << CONF > ./sonar.properties
 sonar.host.url=https://sonar.cr.imson.co/
 sonar.projectKey=smtk:sbvj01
 sonar.projectName=SBVJ01
