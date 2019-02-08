@@ -33,15 +33,8 @@ pipeline {
   }
   stages {
     stage('Prepare') {
-      environment {
-        YARN_VERSION = '1.9.4'
-        NPM_CONFIG_LOGLEVEL = 'warn'
-      }
       steps {
         updateGitlabCommitStatus name: 'jenkins', state: 'running'
-        sh "npm install -g yarn@${env.YARN_VERSION}"
-        // workaround for https://github.com/nodejs/docker-node/issues/661
-        sh 'chmod +x /usr/local/lib/node_modules/yarn/bin/yarn.js'
         sh 'yarn --offline'
       }
     }
