@@ -51,14 +51,6 @@ pipeline {
             sh 'npm run unit'
           }
         }
-        stage('Trigger Sonarqube') {
-          when {
-            branch 'master'
-          }
-          steps {
-            build job: '/SMTK/SBVJ01-sonar', parameters: [string(name: 'GIT_COMMIT', value: "${GIT_COMMIT}")], propagate: false, wait: false
-          }
-        }
       }
     }
 
