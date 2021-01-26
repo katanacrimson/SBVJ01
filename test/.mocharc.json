@@ -1,0 +1,7 @@
+{
+  "require": "source-map-support/register",
+  "reporter": "cypress-multi-reporters",
+  "trace-deprecation": true,
+  "ui": "bdd",
+  "timeout": 10000
+}

@@ -1,4 +1,6 @@
 node_modules/*
+coverage/*
+test-results.xml
+.nyc_output
 .directory
-test/tmp/*
-!test/tmp/.gitkeep
+yarn-error.log

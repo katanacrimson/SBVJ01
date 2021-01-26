@@ -79,8 +79,6 @@ export class SBVJ01 {
     if (Buffer.compare(await sbuf.read(6), Buffer.from('SBVJ01')) !== 0) {
       throw new Error('File does not appear to be SBVJ01 format.')
     }
-
-    return
   }
 
   /**
@@ -166,7 +164,7 @@ export class SBVJ01 {
    */
   public async load (): Promise<{ [index: string]: any }> {
     // first, open the file up
-    let sbuf = new ConsumableFile(this.path)
+    const sbuf = new ConsumableFile(this.path)
     await sbuf.open()
 
     // read/verify the header
@@ -215,7 +213,7 @@ export class SBVJ01 {
     //  throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
     // }
 
-    let sbuf = new ExpandingFile(this.path)
+    const sbuf = new ExpandingFile(this.path)
 
     await sbuf.open()
     await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity)

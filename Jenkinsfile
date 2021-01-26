@@ -25,11 +25,13 @@ pipeline {
   }
   agent {
     docker {
-      image 'node:10-alpine'
+      image 'node:12-alpine'
     }
   }
   environment {
     CI = 'true'
+    NPM_BIN = './node_modules/.bin'
+    NODE_ENV = 'test'
   }
   stages {
     stage('Prepare') {
@@ -43,12 +45,31 @@ pipeline {
       parallel {
         stage('Lint') {
           steps {
-            sh 'npm run style'
+            sh "$NPM_BIN/eslint ./src/*.ts"
           }
         }
         stage('Test') {
           steps {
-            sh 'npm run unit'
+            sh """
+              $NPM_BIN/nyc $NPM_BIN/mocha \
+                --config test/.ci.mocharc.json \
+                --reporter-options configFile=test/mocha.json \
+                ./test/*.spec.ts
+            """.stripIndent()
+          }
+          post {
+            always {
+              junit 'test-results.xml'
+              cobertura autoUpdateHealth: false,
+                autoUpdateStability: false,
+                coberturaReportFile: 'coverage/cobertura-coverage.xml',
+                failUnhealthy: false,
+                failUnstable: false,
+                maxNumberOfBuilds: 0,
+                onlyStable: false,
+                sourceEncoding: 'ASCII',
+                zoomCoverageChart: false
+            }
           }
         }
       }
@@ -56,7 +77,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'npm run build'
+        sh "$NPM_BIN/tsc -p ./tsconfig.json"
       }
     }
   }

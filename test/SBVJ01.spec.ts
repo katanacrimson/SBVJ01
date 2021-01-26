@@ -6,7 +6,7 @@
 // @url <https://github.com/damianb/SBVJ01>
 //
 
-import * as fs from 'fs-extra'
+import * as fs from 'fs'
 import * as path from 'path'
 import { expect } from 'chai'
 import { ConsumableBuffer, ExpandingBuffer } from 'byteaccordion'
@@ -23,7 +23,7 @@ describe('SBVJ01', () => {
       this.timeout(20000)
 
       const filename = path.join(__dirname, '/samples/7bb55a32b4a5fb530273d4b954f39d20.player')
-      const expected = JSON.parse(await fs.readFile(path.join(__dirname, '/samples/Misty.player'), { encoding: 'utf8', flag: 'r' }))
+      const expected = JSON.parse(await fs.promises.readFile(path.join(__dirname, '/samples/Misty.player'), { encoding: 'utf8', flag: 'r' }))
       let player = new SBVJ01(filename)
 
       let res = await player.load()
@@ -36,13 +36,13 @@ describe('SBVJ01', () => {
 
   describe('SBVJ01.save', () => {
     afterEach(async () => {
-      let files = await fs.readdir(tmpDir + '/')
+      let files = await fs.promises.readdir(tmpDir + '/')
       for (const file of files) {
         if (file === '.gitkeep') {
           continue
         }
 
-        await fs.unlink(path.join(tmpDir, file))
+        await fs.promises.unlink(path.join(tmpDir, file))
       }
     })
 
@@ -90,7 +90,7 @@ describe('SBVJ01', () => {
       expect(res.version).to.equal(version)
       expect(res.entity).to.deep.equal(entity)
 
-      expect(Buffer.compare(await fs.readFile(filename), expectedBuffer)).to.equal(0)
+      expect(Buffer.compare(await fs.promises.readFile(filename), expectedBuffer)).to.equal(0)
     })
 
     it('should work as expected when modifying a sample SBVJ01 file (slow running test)', async function () { // tslint:disable-line
@@ -98,7 +98,7 @@ describe('SBVJ01', () => {
       this.timeout(20000)
 
       const filename = tmpDir + '/7bb55a32b4a5fb530273d4b954f39d20.player'
-      await fs.copy(path.join(__dirname, '/samples/7bb55a32b4a5fb530273d4b954f39d20.player'), filename)
+      await fs.promises.copyFile(path.join(__dirname, '/samples/7bb55a32b4a5fb530273d4b954f39d20.player'), filename)
       let player = new SBVJ01(filename)
       await player.load()
 
