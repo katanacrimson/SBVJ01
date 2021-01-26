@@ -7,6 +7,7 @@
 // @url <https://github.com/damianb/SBVJ01>
 //
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SBVJ01 = void 0;
 const byteaccordion_1 = require("byteaccordion");
 const sbon_1 = require("sbon");
 class SBVJ01 {
@@ -49,7 +50,6 @@ class SBVJ01 {
         if (Buffer.compare(await sbuf.read(6), Buffer.from('SBVJ01')) !== 0) {
             throw new Error('File does not appear to be SBVJ01 format.');
         }
-        return;
     }
     /**
      * Reads the versioned JSON object.
@@ -126,7 +126,7 @@ class SBVJ01 {
      */
     async load() {
         // first, open the file up
-        let sbuf = new byteaccordion_1.ConsumableFile(this.path);
+        const sbuf = new byteaccordion_1.ConsumableFile(this.path);
         await sbuf.open();
         // read/verify the header
         // technically, we *don't* need to do this, as _readData will aseek() to where data should begin,
@@ -167,7 +167,7 @@ class SBVJ01 {
         // if (this.entity === null) {
         //  throw new Error('Entity contents/data must be specified before attempting to save an SBVJ01 file.')
         // }
-        let sbuf = new byteaccordion_1.ExpandingFile(this.path);
+        const sbuf = new byteaccordion_1.ExpandingFile(this.path);
         await sbuf.open();
         await SBVJ01._writeEntity(sbuf, this.name, this.version, this.entity);
         await sbuf.close();

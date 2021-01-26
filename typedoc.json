@@ -1,0 +1,7 @@
+{
+  "gitRevision": "master",
+  "theme": "minimal",
+  "out": "docs/",
+  "excludeExternals": true,
+  "excludePrivate": true
+}

@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json",
+      "./test/tsconfig.json"
+    ]
+  },
+  "ignorePatterns": ["build/*", "docs/*", "node_modules/*"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint-config-standard-with-typescript"
+  ],
+  "rules": {
+    "@typescript-eslint/return-await": ["error", "never"],
+    "@typescript-eslint/method-signature-style": ["error", "method"]
+  }
+}
